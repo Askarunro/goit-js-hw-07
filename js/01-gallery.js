@@ -8,7 +8,8 @@ galleryContainar.insertAdjacentHTML('beforeend', cardsMarkup);
 function createImgCardsMarkup(images) {
   return images
     .map(({ preview, original, description }) => {
-      return `<div class="gallery__item">
+      return `
+      <div class="gallery__item">
   <a class="gallery__link" href="${original}">
     <img
       class="gallery__image"
@@ -23,8 +24,6 @@ function createImgCardsMarkup(images) {
 }
 
 galleryContainar.addEventListener('click', onGalleryLinkClick);
-
-console.log(galleryItems);
 
 function onGalleryLinkClick(evt) {
   evt.preventDefault();
