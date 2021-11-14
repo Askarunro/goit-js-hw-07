@@ -22,24 +22,18 @@ galleryContainar.addEventListener('click', onGalleryLinkClick);
 
 function onGalleryLinkClick(evt) {
   evt.preventDefault();
-
-  const galleryImg = evt.target;
-  const parentGalleryImg = galleryImg.closest('.gallery__item').href;
   const isGalleryLinkEl = evt.target.classList.contains('gallery__image');
   if (!isGalleryLinkEl) {
     return;
   }
-
-  return parentGalleryImg;
+  return;
 }
 
-//  const gallery = galleryItems.simpleLightbox();
-//   const galleryItems = document.querySelector('.gallery li');
-//   gallery.next(); // Next Image
-const lightbox = new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery__item', {
   nav: true,
   captions: true,
-  //   captionsData: images.description,
+  captionType: 'attr',
+  captionsData: 'alt',
   captionPosition: 'bottom',
   captionDelay: 250,
   infinite: false,
