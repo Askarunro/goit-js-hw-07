@@ -39,5 +39,13 @@ function onGalleryLinkClick(evt) {
 
   instance.show();
 
+  window.addEventListener('keydown', evt => {
+    const modalClose = document.querySelector('.basicLightbox');
+    if (evt.key !== 'Escape') {
+      return;
+    }
+    modalClose.classList.remove('basicLightbox--visible');
+  });
+
   return urlLinkOriginalImg;
 }
